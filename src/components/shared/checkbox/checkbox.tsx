@@ -2,7 +2,21 @@ import classNames from 'classnames'
 
 import styles from './checkbox.module.scss'
 
-export function Checkbox({ children, id, className, onChange, ...attrs }) {
+type CheckboxProps = {
+  children?: string
+  id?: string
+  className?: string
+  onChange?: React.ChangeEventHandler<HTMLInputElement>
+  attrs: any
+}
+
+export function Checkbox({
+  children,
+  id = '',
+  className = '',
+  onChange,
+  ...attrs
+}: CheckboxProps) {
   const cn = classNames(styles.checkbox, className)
 
   return (
@@ -18,11 +32,4 @@ export function Checkbox({ children, id, className, onChange, ...attrs }) {
       {children}
     </label>
   )
-}
-
-Checkbox.defaultProps = {
-  id: '',
-  children: '',
-  className: '',
-  onChange: () => {},
 }
