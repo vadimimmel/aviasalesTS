@@ -1,0 +1,34 @@
+@import '../../scss/base/variables';
+
+.Sort {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-area: Sort;
+  max-height: 50px;
+  &__button {
+    border-radius: 0;
+    &:first-of-type {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-of-type {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .Sort {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    max-height: none;
+
+    &__button {
+      &:first-of-type {
+        border-radius: 5px 5px 0 0;
+      }
+      &:last-of-type {
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+}

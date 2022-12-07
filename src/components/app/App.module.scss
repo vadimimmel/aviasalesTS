@@ -1,3 +1,44 @@
+@import '../../scss/base/variables';
+
 .App {
-  text-align: center;
+  display: grid;
+  grid-row-gap: 20px;
+  grid-column-gap: 19px;
+  grid-template-areas:
+    'Logo Logo'
+    'Filters Sort'
+    'Filters Results';
+  grid-template-columns: 232px minmax(280px, 502px); /*temporarily*/
+  justify-content: center;
+  align-content: start;
+  padding-bottom: 50px;
+  background: #f3f7fa;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 30px;
+}
+
+@media screen and (max-width: $tablet) {
+  .App {
+    grid-template-areas:
+      'Logo Logo'
+      'Filters Sort'
+      'Results Results';
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .App {
+    grid-template-areas:
+      'Logo'
+      'Filters'
+      'Sort'
+      'Results';
+    grid-template-columns: 1fr;
+  }
 }

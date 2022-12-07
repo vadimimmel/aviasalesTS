@@ -1,0 +1,24 @@
+@import '../../../scss/base/variables';
+
+.Button {
+  padding: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  background-color: $bg-primary;
+  border: none;
+  border-radius: 5px;
+  cursor: url(../../../assets/icons/Cursor.cur), pointer;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $main;
+  }
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &_active {
+    background-color: $main;
+    color: $bg-primary;
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../scss/base/variables';
+
+.Logo {
+  grid-area: Logo;
+  display: grid;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: $tablet) {
+  .Logo {
+    padding-bottom: 0;
+  }
+}

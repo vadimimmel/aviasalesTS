@@ -1,0 +1,12 @@
+@mixin font($font-family, $font-file, $font-weight) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file) format('truetype');
+    font-weight: $font-weight;
+    font-style: normal;
+    font-display: fallback;
+  }
+}
+
+@include font('Open Sans', './/OpenSans-Regular.ttf', 400);
+@include font('Open Sans', './/OpenSans-SemiBold.ttf', 600);

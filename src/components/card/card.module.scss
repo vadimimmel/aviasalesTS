@@ -1,0 +1,63 @@
+@import '../../scss/base/variables';
+
+.Card {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: $bg-primary;
+  box-shadow: 0px 2px 8px $card-shadow;
+  text-transform: uppercase;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'price price logo'
+    'about about about'
+    'about about about';
+  &__price {
+    grid-area: price;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    color: $main;
+  }
+  &__logo {
+    grid-area: logo;
+  }
+  &__about {
+    grid-area: about;
+    display: grid;
+    grid-gap: 20px;
+    justify-content: start;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  }
+  &__logoWrapper {
+    display: grid;
+    justify-content: end;
+  }
+  &__descr {
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    color: $text-secondary;
+  }
+  &__value {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
+    color: $text-primary;
+    &_length {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 15px;
+      color: $text-primary;
+      text-transform: lowercase;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .Card {
+    &__descr {
+      font-size: 10px;
+    }
+  }
+}
