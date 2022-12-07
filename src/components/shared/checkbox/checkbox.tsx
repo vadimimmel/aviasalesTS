@@ -2,13 +2,7 @@ import classNames from 'classnames'
 
 import styles from './checkbox.module.scss'
 
-type CheckboxProps = {
-  children?: string
-  id?: string
-  className?: string
-  onChange?: React.ChangeEventHandler<HTMLInputElement>
-  attrs: any
-}
+import { CheckboxProps } from './CheckboxProps'
 
 export function Checkbox({
   children,
@@ -16,8 +10,8 @@ export function Checkbox({
   className = '',
   onChange,
   ...attrs
-}: CheckboxProps) {
-  const cn = classNames(styles.checkbox, className)
+}: CheckboxProps): JSX.Element {
+  const cn: string = classNames(styles.checkbox, className)
 
   return (
     <label className={cn}>

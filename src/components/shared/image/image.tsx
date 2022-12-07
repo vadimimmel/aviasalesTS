@@ -2,15 +2,7 @@ import classNames from 'classnames'
 
 import styles from './image.module.scss'
 
-type ImageProps = {
-  src: string
-  alt: string
-  className?: string
-  width?: number
-  height?: number
-  circle?: boolean
-  attrs?: any
-}
+import { ImageProps } from './ImageProps'
 
 export function Image({
   src = 'https://via.placeholder.com/110x36',
@@ -20,7 +12,7 @@ export function Image({
   height = 100,
   circle = false,
   ...attrs
-}: ImageProps) {
+}: ImageProps): JSX.Element {
   if (!src) {
     src = `https://via.placeholder.com/${width}x${height}`
   }
